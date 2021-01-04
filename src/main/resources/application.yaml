@@ -1,0 +1,32 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: warehouse-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: root
+      database: warehouse-service-db
+      authentication-database: admin
+      repositories:
+        enabled: true # Enable Mongo repositories.
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+# App Properties
+bezkoder:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
